@@ -252,7 +252,6 @@ const getCurrentUser = asyncHandler(async (req,res)=>{
     )
 })
 
-
 const getUserChannelProfile = asyncHandler(async(req,res)=>{
     const {username} = req.params
 
@@ -289,7 +288,7 @@ const getUserChannelProfile = asyncHandler(async(req,res)=>{
                     $size:"$subscribers"
                 },
                 channelsSubscribeTo:{
-                    $size:"$subscribeTo"
+                    $size:"$subscribedTo"
                 },
                 isSubscribed:{
                     $cond:{
